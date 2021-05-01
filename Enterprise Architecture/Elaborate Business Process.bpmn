@@ -166,7 +166,7 @@
     </bpmn:exclusiveGateway>
     <bpmn:sequenceFlow id="Flow_1f61qdp" sourceRef="Activity_10sf9hz" targetRef="Gateway_1dyj35k" />
     <bpmn:sequenceFlow id="Flow_0fv9i2s" name="No" sourceRef="Gateway_1dyj35k" targetRef="Activity_0xhdcz3" />
-    <bpmn:subProcess id="Activity_0v0izkd">
+    <bpmn:subProcess id="Activity_0v0izkd" name="Check Payment">
       <bpmn:incoming>Flow_10qdq4p</bpmn:incoming>
       <bpmn:outgoing>Flow_0zre02x</bpmn:outgoing>
       <bpmn:startEvent id="Event_05bndu4">
