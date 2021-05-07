@@ -1,16 +1,17 @@
 package com.camunda.myBPM.deployBPM;
 
-import java.util.Random;
+import java.util.logging.Logger;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
 
-public class PayOrderDelegate implements JavaDelegate {
+public class NotifyCustomerDelegate implements JavaDelegate {
+	
+	private final static Logger LOGGER = Logger.getLogger("ORDER-CANCEL");
 
 	@Override
 	public void execute(DelegateExecution execution) throws Exception {
 		// TODO Auto-generated method stub
-		Random rando = new Random();
-		execution.setVariable("paymentOK", rando.nextBoolean());
+		LOGGER.info("Processing request");
 	}
 
 }

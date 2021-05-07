@@ -5,13 +5,13 @@
     <bpmn:participant id="Participant_166hh5x" name="Check Payment" processRef="Process_1r6k28t" />
     <bpmn:participant id="Participant_0393wbl" name="Company" processRef="Process_1sn7bbw" />
     <bpmn:participant id="Participant_07c6gpa" name="Carrier" processRef="Process_0lhkkhc" />
-    <bpmn:messageFlow id="Flow_1moctt6" sourceRef="Activity_0egj1a5" targetRef="Event_0gxo74q" />
-    <bpmn:messageFlow id="Flow_1snqbpc" sourceRef="Event_04ceo7y" targetRef="Activity_0egj1a5" />
     <bpmn:messageFlow id="Flow_0ysvy1n" sourceRef="Event_0wpbhwd" targetRef="Event_10ix6ci" />
     <bpmn:messageFlow id="Flow_0xz13xs" sourceRef="Activity_1097dpp" targetRef="Event_0vaq9jq" />
     <bpmn:messageFlow id="Flow_1omu5o0" sourceRef="Activity_05q38r9" targetRef="Event_1ftg2r0" />
     <bpmn:messageFlow id="Flow_0wmkj21" sourceRef="Activity_0u4et7g" targetRef="Activity_00mzibd" />
     <bpmn:messageFlow id="Flow_0y2gwld" sourceRef="Activity_1b286n1" targetRef="Event_16xb3jq" />
+    <bpmn:messageFlow id="Flow_1moctt6" sourceRef="Activity_0egj1a5" targetRef="Event_0gxo74q" />
+    <bpmn:messageFlow id="Flow_1snqbpc" sourceRef="Event_04ceo7y" targetRef="Activity_0egj1a5" />
   </bpmn:collaboration>
   <bpmn:process id="Process_1lox88y" isExecutable="false">
     <bpmn:startEvent id="Event_1uo514c">
@@ -22,12 +22,6 @@
       <bpmn:outgoing>Flow_0fv9i2s</bpmn:outgoing>
       <bpmn:outgoing>Flow_10qdq4p</bpmn:outgoing>
     </bpmn:exclusiveGateway>
-    <bpmn:manualTask id="Activity_0xhdcz3" name="Browse order on website">
-      <bpmn:incoming>Flow_0wfxd83</bpmn:incoming>
-      <bpmn:incoming>Flow_0fv9i2s</bpmn:incoming>
-      <bpmn:outgoing>Flow_16vxwa8</bpmn:outgoing>
-      <bpmn:standardLoopCharacteristics />
-    </bpmn:manualTask>
     <bpmn:subProcess id="Activity_0v0izkd" name="Check Payment">
       <bpmn:incoming>Flow_10qdq4p</bpmn:incoming>
       <bpmn:outgoing>Flow_0zre02x</bpmn:outgoing>
@@ -68,8 +62,8 @@
         <bpmn:outgoing>Flow_0nybywg</bpmn:outgoing>
       </bpmn:serviceTask>
       <bpmn:serviceTask id="Activity_0egj1a5" name="Pay for order">
-        <bpmn:incoming>Flow_1pb8obo</bpmn:incoming>
         <bpmn:incoming>Flow_0rit64k</bpmn:incoming>
+        <bpmn:incoming>Flow_1pb8obo</bpmn:incoming>
         <bpmn:outgoing>Flow_0ac4dgs</bpmn:outgoing>
       </bpmn:serviceTask>
     </bpmn:subProcess>
@@ -113,6 +107,12 @@
     <bpmn:sequenceFlow id="Flow_1f61qdp" sourceRef="Activity_10sf9hz" targetRef="Gateway_1dyj35k" />
     <bpmn:sequenceFlow id="Flow_16vxwa8" sourceRef="Activity_0xhdcz3" targetRef="Activity_10sf9hz" />
     <bpmn:sequenceFlow id="Flow_0wfxd83" sourceRef="Event_1uo514c" targetRef="Activity_0xhdcz3" />
+    <bpmn:userTask id="Activity_0xhdcz3" name="Browse order on website">
+      <bpmn:incoming>Flow_0fv9i2s</bpmn:incoming>
+      <bpmn:incoming>Flow_0wfxd83</bpmn:incoming>
+      <bpmn:outgoing>Flow_16vxwa8</bpmn:outgoing>
+      <bpmn:standardLoopCharacteristics />
+    </bpmn:userTask>
     <bpmn:textAnnotation id="TextAnnotation_0emesxn">
       <bpmn:text>until customer stop</bpmn:text>
     </bpmn:textAnnotation>
@@ -292,7 +292,7 @@
           <dc:Bounds x="630" y="522" width="81" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_1mopvit_di" bpmnElement="Activity_0xhdcz3">
+      <bpmndi:BPMNShape id="Activity_08af6kt_di" bpmnElement="Activity_0xhdcz3">
         <dc:Bounds x="320" y="450" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_1j0pb3c_di" bpmnElement="Activity_0v0izkd" isExpanded="true">
