@@ -39,6 +39,13 @@
   </dependencyManagement>
 
   <dependencies>
+  
+  	<dependency>
+  		<groupId>org.camunda.bpm.extension</groupId>
+  		<artifactId>camunda-bpm-mail-core</artifactId>
+  		<version>1.2.0</version>
+	</dependency>
+  
     <dependency>
       <!-- process engine, needs to be 'provided' because it's already a shared library in the application server -->
       <groupId>org.camunda.bpm</groupId>

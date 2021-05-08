@@ -1,0 +1,85 @@
+<h3>Delivery Form<h3>
+<form role="form"
+	name="deliveryForm">
+	
+<div class="row">
+	<div class="col-xs-6">
+		<h2>Customer Delivery Data</h2>
+		
+		<!-- Gender -->
+		<div class="form-group">
+			<label for="gender">Gender</label>
+			<div class="controls">
+
+				<!--select box -->
+				<select class="form-control"
+				   cam-variable-name="gender"
+				   cam-variable-type="String"
+				   ng-change="calculateLoan()">
+				  <option value="m" checked>Mr.</option>
+				  <option value="f">Mrs.</option>
+				</select>
+
+			</div>
+    	</div>
+    	
+    	<!-- Firstname -->
+		<div class="form-group">
+			<label for="inputFirstname">First Name</label>
+			<div class="controls">
+				<input class="form-control"
+				       required
+				       type="text"
+				       cam-variable-name="firstname"
+				       cam-variable-type="String"
+				       placeholder="LooKes"
+				       ng-minlength="2"
+				       ng-maxlength="20" />
+			</div>
+  		</div>
+  		
+  		<!-- Lastname -->
+    	<div class="form-group">
+			<label for="inputLastname">Last Name</label>
+			<div class="controls">
+				<input class="form-control"
+		               required
+		               type="text"
+		               cam-variable-name="lastname"
+		               cam-variable-type="String"
+		               placeholder="Wong"
+		               ng-minlength="2"
+		               ng-maxlength="20" />
+      		</div>
+    	</div>
+  		
+  		<!-- Email -->
+    	<div class="form-group">
+			<label for="inputEmail">Email</label>
+			<div class="controls">
+				<input class="form-control"
+				       required
+				       type="text"
+				       cam-variable-name="email"
+				       cam-variable-type="String"
+				       placeholder="lookeswong@camunda.org"
+				       ng-minlength="2"
+				       ng-maxlength="20" />
+      		</div>
+    	</div>
+    	
+    	<!-- Address -->
+    	<div class="form-group">
+			<label for="inputAddress">Delivery Address</label>
+			<div class="controls">
+		        <textarea class="form-control"
+		                  cam-variable-name="address"
+		                  cam-variable-type="String"
+		                  rows="4"></textarea>
+      		</div>
+    	</div>
+    	
+	</div>
+</div>
+</form>
+  		
