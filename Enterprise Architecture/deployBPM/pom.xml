@@ -56,6 +56,7 @@
       <groupId>org.camunda.bpm.assert</groupId>
       <artifactId>camunda-bpm-assert</artifactId>
       <version>10.0.0</version>
+      <scope>test</scope>
     </dependency>
 
     <!-- Required by camunda-bpm-assert -->
@@ -84,6 +85,7 @@
       <artifactId>camunda-template-engines-freemarker</artifactId>
       <scope>provided</scope>
     </dependency>
+    
     <dependency>
       <groupId>org.camunda.template-engines</groupId>
       <artifactId>camunda-template-engines-velocity</artifactId>
@@ -118,6 +120,14 @@
       <version>4.13.1</version>
       <scope>test</scope>
     </dependency>
+    
+    <dependency>
+		<groupId>org.mockito</groupId>
+		<artifactId>mockito-core</artifactId>
+		<version>3.3.0</version>
+		<scope>test</scope>
+	</dependency>
+    
 
     <dependency>
       <!-- Needed for InMemoryH2Test -->
