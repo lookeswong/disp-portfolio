@@ -98,13 +98,6 @@
       <version>3.1.0</version>
       <scope>provided</scope>
     </dependency>
-    
-    <!-- https://mvnrepository.com/artifact/com.sun.mail/javax.mail -->
-<!-- 	<dependency>
-	    <groupId>com.sun.mail</groupId>
-	    <artifactId>javax.mail</artifactId>
-	    <version>1.5.5</version>
-	</dependency> -->
 	
 	<!-- https://mvnrepository.com/artifact/javax.activation/activation -->
 	<dependency>
@@ -127,12 +120,6 @@
 		<version>3.3.0</version>
 		<scope>test</scope>
 	</dependency>
-    
-    <dependency>
-        <groupId>com.icegreen</groupId>
-        <artifactId>greenmail</artifactId>
-        <version>1.5.7</version>
-    </dependency>
 
     <dependency>
       <!-- Needed for InMemoryH2Test -->
@@ -154,15 +141,7 @@
 	  <groupId>org.camunda.bpm.extension</groupId>
 	  <artifactId>camunda-bpm-mail-core</artifactId>
 	  <version>1.2.0</version>
-	  <scope>provided</scope>
 	</dependency>
-	
-<!-- 	<dependency>
-    	<groupId>org.camunda.connect</groupId>
-    	<artifactId>camunda-connect-core</artifactId>
-    	<version>1.0.3</version>
-    	<scope>provided</scope>
-	</dependency> -->
 
     <!-- use logback as logger -->
     <dependency>
@@ -187,13 +166,6 @@
       <version>1.7.25</version>
       <scope>test</scope>
     </dependency>
-    
-    <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
-<!-- 	<dependency>
-	    <groupId>org.slf4j</groupId>
-	    <artifactId>slf4j-api</artifactId>
-	    <version>1.7.21</version>
-	</dependency> -->
     
 
     <!-- Add your own dependencies here, if in compile scope, they are added to the war -->

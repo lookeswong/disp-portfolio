@@ -45,51 +45,51 @@ public class ProcessUnitTest {
   public void testParsingAndDeployment() {
 	  // just for deployment
   }
-  
-  @Test
-  @Deployment(resources="process.bpmn")
-  public void testCurrentStatus() {
-	  // Obtain test run of BPMN
-	ProcessInstanceWithVariables processInstance = (ProcessInstanceWithVariables) processEngine()
-			.getRuntimeService().startProcessInstanceByKey(PROCESS_DEFINITION_KEY);
-
-	// Obtain the value of the stockOK variable
-	boolean stockOK = (boolean) processInstance.getVariables().get("stockOK");
-	System.out.println("stockOK" + stockOK);
-	
-	// Obtain a reference to the current task
-	TaskAssert task = assertThat(processInstance).task();
-	
-	if (stockOK) {
-		assertThat(processInstance).isWaitingAt("Activity_12a72z8");
-		task.hasName("Deliver Item");
-		task.isNotAssigned();
-	} else {
-		assertThat(processInstance).isWaitingAt("Activity_1752lvf");
-		task.hasName("Reorder stock");
-		task.isNotAssigned();
-	}
-  }
-  
-  @Test
-  @Deployment(resources = "process.bpmn")
-  public void testCompletionOftask() {
-	  // Obtain test run of BPMN
-	  ProcessInstanceWithVariables processInstance = (ProcessInstanceWithVariables) processEngine()
-			  .getRuntimeService()
-			  .startProcessInstanceByKey(PROCESS_DEFINITION_KEY);
-	  
-	  // Obtain a reference to the current task
-	  TaskAssert taskAssert = assertThat(processInstance).task();
-	  
-	  TaskEntity task = (TaskEntity) taskAssert.getActual();
-	  
-	  task.delegate("user");
-	  
-	  task.resolve();
-	  
-//	  assertThat(processInstance).isEnded();
-  }
+//  
+//  @Test
+//  @Deployment(resources="process.bpmn")
+//  public void testCurrentStatus() {
+//	  // Obtain test run of BPMN
+//	ProcessInstanceWithVariables processInstance = (ProcessInstanceWithVariables) processEngine()
+//			.getRuntimeService().startProcessInstanceByKey(PROCESS_DEFINITION_KEY);
+//
+//	// Obtain the value of the stockOK variable
+//	boolean stockOK = (boolean) processInstance.getVariables().get("stockOK");
+//	System.out.println("stockOK" + stockOK);
+//	
+//	// Obtain a reference to the current task
+//	TaskAssert task = assertThat(processInstance).task();
+//	
+//	if (stockOK) {
+//		assertThat(processInstance).isWaitingAt("Activity_12a72z8");
+//		task.hasName("Deliver Item");
+//		task.isNotAssigned();
+//	} else {
+//		assertThat(processInstance).isWaitingAt("Activity_1752lvf");
+//		task.hasName("Reorder stock");
+//		task.isNotAssigned();
+//	}
+//  }
+//  
+//  @Test
+//  @Deployment(resources = "process.bpmn")
+//  public void testCompletionOftask() {
+//	  // Obtain test run of BPMN
+//	  ProcessInstanceWithVariables processInstance = (ProcessInstanceWithVariables) processEngine()
+//			  .getRuntimeService()
+//			  .startProcessInstanceByKey(PROCESS_DEFINITION_KEY);
+//	  
+//	  // Obtain a reference to the current task
+//	  TaskAssert taskAssert = assertThat(processInstance).task();
+//	  
+//	  TaskEntity task = (TaskEntity) taskAssert.getActual();
+//	  
+//	  task.delegate("user");
+//	  
+//	  task.resolve();
+//	  
+////	  assertThat(processInstance).isEnded();
+//  }
   
   
   
