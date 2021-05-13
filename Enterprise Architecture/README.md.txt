@@ -14,6 +14,26 @@ systems
 
 -a Java project named deployBPM
 
+***** camunda-bpm-mail *****
+
+To enable this in your pc, please download camunda-bpm-mail-core.jar into your tomcat/server/apache/lib and paste the mail-config.properties file under your tomcat/server/apache/conf.
+
+You will also need to download javax.mail, camunda-connect-cor and slf4j-api. Detailed guide follow this link:
+https://github.com/camunda-community-hub/camunda-bpm-mail#how-to-configure-it
+
+After that include this dependency below in your pom.xml
+<dependency>
+	<groupId>org.camunda.bpm.extension</groupId>
+	<artifactId>camunda-bpm-mail-core</artifactId>
+	<version>1.2.0</version>
+</dependency>
+
+<dependency>
+	<groupId>javax.activation</groupId>
+	<artifactId>activation</artifactId>
+	<version>1.1.1</version>
+</dependency>
+
 
 
 Test Cases:
