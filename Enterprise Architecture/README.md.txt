@@ -14,3 +14,18 @@ systems
 
 -a Java project named deployBPM
 
+
+
+Test Cases:
+*****CheckStockDelegateTest.java****
+verifyThatTheDelegateSetsVariable() :- test if the Check Stock Service tasks can successfully generate a boolean variable
+
+*****MailProviderIntegrationTest.java*****
+notificationService() :- test if the send-mail connector used in Notify User service task is able to send email to the email address
+
+*****ProcessUnitTest.java*****
+testCurrentStatus() :- test the status of the user tasks
+
+testCompletionOftask() :- test if the business process can be finish successfully or not
+
+testParsingAndDeployment() :- test if the business process is deployable.
