@@ -10,15 +10,19 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
 import javax.mail.MessagingException;
+import javax.mail.internet.MimeMessage;
 
 import org.camunda.bpm.extension.mail.MailConnectors;
 import org.camunda.bpm.extension.mail.config.MailConfigurationFactory;
 import org.camunda.bpm.extension.mail.config.PropertiesMailConfiguration;
 import org.camunda.bpm.extension.mail.dto.Mail;
 import org.camunda.bpm.extension.mail.notification.MailNotificationService;
+import org.camunda.bpm.extension.mail.poll.PollMailResponse;
 import org.junit.Before;
 import org.junit.Ignore;
+import org.junit.Rule;
 import org.junit.Test;
+
 
 public class MailProviderIntegrationTest {
 
@@ -34,27 +38,28 @@ public class MailProviderIntegrationTest {
 		MailConfigurationFactory.setConfiguration(configuration);
 	}
 
-	@Test
-	public void textMessage() throws MessagingException {
-
-		// send a new mail
-		MailConnectors.sendMail().createRequest().from(MAIL_ADDRESS).fromAlias("testing").to(MAIL_ADDRESS).subject("camunda-bpm-mail")
-				.text("integration test").execute();
-
+//	@Test
+//	public void textMessage() throws MessagingException {
+//
+//		// send a new mail
+//		MailConnectors.sendMail().createRequest().from(MAIL_ADDRESS).fromAlias("testing").to(MAIL_ADDRESS).subject("camunda-bpm-mail")
+//				.text("integration test").execute();
+//
 //		// poll the mail
 //		List<Mail> mails = MailConnectors.pollMails().createRequest().downloadAttachments(false).execute().getMails();
 //
-//		assertThat(mails).hasSize(1).extracting("subject").contains("camunda-bpm-mail");
+//		assertThat(mails).extracting("subject").contains("camunda-bpm-mail");
 //
 //		// delete the mail
 //		MailConnectors.deleteMails().createRequest().mails(mails.get(0)).execute();
 //
 //		// verify that the mail is deleted
 //		mails = MailConnectors.pollMails().createRequest().downloadAttachments(false).execute().getMails();
+//
+//		assertThat(mails).hasSize(0);
+//	}
 
-//		assertThat(mails).hasSize(1);
-	}
-
+	// test the send-mail connector can send email
 	@Test
 	public void notificationService() throws Exception {
 		MailNotificationService notificationService = new MailNotificationService(

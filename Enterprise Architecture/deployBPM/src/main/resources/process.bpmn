@@ -34,7 +34,7 @@
     <bpmn:endEvent id="Event_19fojlg" name="order completed">
       <bpmn:incoming>Flow_131r4cg</bpmn:incoming>
     </bpmn:endEvent>
-    <bpmn:serviceTask id="Activity_07zx3ms" name="Notify user" camunda:asyncBefore="true">
+    <bpmn:serviceTask id="Activity_07zx3ms" name="Notify user">
       <bpmn:extensionElements>
         <camunda:connector>
           <camunda:inputOutput>
